@@ -89,5 +89,27 @@ public class MagangApp {
                     data[i][0], data[i][1], data[i][2], data[i][3], data[i][4], data[i][5]);
         }
     }
+
+    public static void cariProdi() {
+        System.out.print("\nMasukkan program studi yang dicari: ");
+        String cari = input.nextLine();
+
+        boolean ditemukan = false;
+        System.out.printf("%-20s %-10s %-12s %-15s %-10s %-10s%n",
+                "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+
+        for (int i = 0; i < jumlahData; i++) {
+            if (data[i][2].equalsIgnoreCase(cari)) {
+                System.out.printf("%-20s %-10s %-12s %-15s %-10s %-10s%n",
+                        data[i][0], data[i][1], data[i][2], data[i][3], data[i][4], data[i][5]);
+                ditemukan = true;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Tidak ada pendaftar dengan prodi tersebut.");
+        }
+    }
+
     
 }
