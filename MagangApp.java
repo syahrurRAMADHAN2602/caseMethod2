@@ -22,7 +22,27 @@ public class MagangApp {
             pilihan = input.nextInt();
             input.nextLine();
 
-        } while();
+            switch (pilihan) {
+                case 1:
+                    tambahData();
+                    break;
+                case 2:
+                    tampilData();
+                    break;
+                case 3:
+                    cariProdi();
+                    break;
+                case 4:
+                    hitungStatus();
+                    break;
+                case 5:
+                    System.out.println("Terima kasih!");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid!");
+            }
+
+        } while (pilihan != 5);
     }
 
     public static void tambahData() {
@@ -45,7 +65,8 @@ public class MagangApp {
             System.out.print("Semester (6 atau 7): ");
             semester = input.nextLine();
 
-            if (semester.equals("6") || semester.equals("7")) break;
+            if (semester.equals("6") || semester.equals("7"))
+                break;
 
             System.out.println("ERROR! Semester hanya boleh 6 atau 7.");
         }
@@ -56,8 +77,8 @@ public class MagangApp {
             status = input.nextLine();
 
             if (status.equalsIgnoreCase("Diterima") ||
-                status.equalsIgnoreCase("Menunggu") ||
-                status.equalsIgnoreCase("Ditolak")) {
+                    status.equalsIgnoreCase("Menunggu") ||
+                    status.equalsIgnoreCase("Ditolak")) {
                 break;
             }
             System.out.println("ERROR! Input status tidak valid.");
@@ -111,14 +132,17 @@ public class MagangApp {
         }
     }
 
-     public static void hitungStatus() {
+    public static void hitungStatus() {
         int diterima = 0, menunggu = 0, ditolak = 0;
 
         for (int i = 0; i < jumlahData; i++) {
             String status = data[i][5].toLowerCase();
-            if (status.equals("diterima")) diterima++;
-            else if (status.equals("menunggu")) menunggu++;
-            else if (status.equals("ditolak")) ditolak++;
+            if (status.equals("diterima"))
+                diterima++;
+            else if (status.equals("menunggu"))
+                menunggu++;
+            else if (status.equals("ditolak"))
+                ditolak++;
         }
 
         System.out.println("\n=== JUMLAH PENDAFTAR BERDASARKAN STATUS ===");
