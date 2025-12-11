@@ -137,11 +137,11 @@ public class MagangApp {
 
         for (int i = 0; i < jumlahData; i++) {
             String status = data[i][5].toLowerCase();
-            if (status.equals("diterima"))
+            if (status.equalsIgnoreCase("diterima"))
                 diterima++;
-            else if (status.equals("menunggu"))
+            else if (status.equalsIgnoreCase("menunggu"))
                 menunggu++;
-            else if (status.equals("ditolak"))
+            else if (status.equalsIgnoreCase("ditolak"))
                 ditolak++;
         }
 
