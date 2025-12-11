@@ -111,5 +111,19 @@ public class MagangApp {
         }
     }
 
-    
+     public static void hitungStatus() {
+        int diterima = 0, menunggu = 0, ditolak = 0;
+
+        for (int i = 0; i < jumlahData; i++) {
+            String status = data[i][5].toLowerCase();
+            if (status.equals("diterima")) diterima++;
+            else if (status.equals("menunggu")) menunggu++;
+            else if (status.equals("ditolak")) ditolak++;
+        }
+
+        System.out.println("\n=== JUMLAH PENDAFTAR BERDASARKAN STATUS ===");
+        System.out.println("Diterima : " + diterima);
+        System.out.println("Menunggu : " + menunggu);
+        System.out.println("Ditolak  : " + ditolak);
+    }
 }
